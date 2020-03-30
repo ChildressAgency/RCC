@@ -1,0 +1,30 @@
+
+
+.site-top-header {
+  background-color: #53284f;
+  display: flex;
+}
+
+.site-top-header .right-side {
+    margin-left: auto;
+}
+
+.site-top-header .social-icons, .site-top-header .appointment {
+  display: inline-block;  
+}
+
+.site-top-header .appointment {
+  margin-right: 40px;
+}
+
+.site-top-header .social-icons li {
+  display: inline-block;
+}
+
+.site-top-header a {
+  color: #fff;
+}
+
+section.hero{
+  background:
+}
