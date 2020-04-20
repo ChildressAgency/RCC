@@ -1,0 +1,713 @@
+/*
+Theme Name: RCC-dev
+Text Domain: rcc
+Version: 1.2
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Theme URI: https://wordpress.org/themes/twentytwenty/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+html,
+body {
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit; }
+
+blockquote::before, blockquote::after {
+  content: ""; }
+
+.site-top-header {
+  background-color: #53284f;
+  display: flex; }
+  .site-top-header .right-side {
+    margin-left: auto; }
+  .site-top-header .social-icons {
+    display: inline-block; }
+  .site-top-header .appointment {
+    display: inline-block;
+    margin-right: 40px; }
+  .site-top-header .social-icons li {
+    display: inline-block; }
+  .site-top-header a {
+    color: #fff; }
+
+.navbar {
+  height: 90px;
+  margin-bottom: -90px;
+  z-index: 99;    
+}
+  .navbar .navbar-nav a {
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: "Lato - Bold";
+    font-weight: 700;
+    font-family: "Lato - Regular";
+    font-weight: 400;
+    font-family: "Lato - Bold";
+    font-weight: 700;
+  }
+
+.navbar .dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar li a:hover {
+    color: #53284f;
+    text-decoration: underline;
+}
+
+footer {
+  background-color: #987e95; }
+  footer h2 {
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 73px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.73px;
+    margin: 40px 0 30px; }
+  footer h2,
+  footer h3,
+  footer a,
+  footer i {
+    color: white; }
+  footer i {
+    font-size: 30px;
+    margin-right: 15px;
+    padding-top: 10px; }
+  footer .col-md > div {
+    display: flex;
+    margin: 30px 0; }
+  footer .phone i {
+    -webkit-animation: vibrate 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    animation: vibrate 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 300px;
+    perspective: 300px; }
+  footer .left-side h3,
+  footer .left-side a {
+    color: #ffffff;
+    font-family: "Lexend Deca";
+    font-size: 33px;
+    font-weight: 400;
+    letter-spacing: 0.33px; }
+  footer .right-side {
+    text-align: right; }
+    footer .right-side > div {
+      justify-content: flex-end; }
+    footer .right-side h3 {
+      color: #ffffff;
+      font-family: Lato;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.26px; }
+    footer .right-side a i {
+      margin-left: 15px;
+      margin-right: 0; }
+    footer .right-side .follow-us h3 {
+      color: #ffffff;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 55px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.55px; }
+  footer .footer-logo {
+    margin: 40px 0 30px; }
+  footer .footer-social-media {
+    display: flex;
+    justify-content: flex-end; }
+
+@keyframes vibrate {
+  0%,
+  2%,
+  4%,
+  6%,
+  8%,
+  10%,
+  12%,
+  14%,
+  16%,
+  18% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+    transform: translate3d(-1px, 0, 0); }
+  1%,
+  3%,
+  5%,
+  7%,
+  9%,
+  11%,
+  13%,
+  15%,
+  17%,
+  19% {
+    -webkit-transform: translate3d(1px, 0, 0);
+    transform: translate3d(1px, 0, 0); }
+  20%,
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.site-top-header {
+  background-color: #53284f;
+  display: flex; }
+  .site-top-header .right-side {
+    margin-left: auto; }
+  .site-top-header .social-icons {
+    display: inline-block; }
+  .site-top-header .appointment {
+    display: inline-block;
+    margin-right: 40px; }
+  .site-top-header .social-icons li {
+    display: inline-block; }
+  .site-top-header a {
+    color: #fff; }
+
+.hero {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 870px;
+  width: 100%;
+  position: relative;
+ 
+}
+
+.hero h1{
+    text-align:center;
+}
+
+.hero h2{
+    text-align:center;
+    color: #53284f;
+    font-family: Lato;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.hero-bg-image {
+  background-size: cover; 
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-logo {
+  margin: auto;
+  max-width: 820px;
+  width: 100%; 
+}
+
+.hero-text h1 {
+    color: #14596c;
+    font-family: "Lato - Black";
+    font-size: 126px;
+    font-weight: 600;
+}
+ 
+
+.quote {
+  background-color: #53284f;
+  display: flex;
+  flex-direction: column; 
+    
+}
+
+p.mission {
+  font-family: "Dawning of a New Day", cursive;
+  color: #ffffff;
+   font-size: 25px;
+   font-weight: 400;
+   letter-spacing: 0.35px;
+    
+}
+p.word{
+  font-family: "Dawning of a New Day", cursive;
+  color: #ffffff;
+   font-size: 53px;
+   font-weight: 400;
+   letter-spacing: 0.35px;  
+}
+
+hr.top, hr.bottom {
+  margin-top: 3rem;
+  margin-bottom: 1.6rem;
+  border: 0;
+  border-top: 1px solid rbga();
+  border-top: 4px solid #987e95; }
+
+.blockquote-footer::before {
+  content: none; }
+
+cite {
+  color: #ffffff;
+  font-family: "Lato - Light Italic";
+  font-size: 47px;
+  font-weight: 400;
+  font-family: "Lato", sans-serif; }
+
+.button {
+  justify-content: center; }
+
+.service {
+  background-color: #987e95;
+  border-radius: 0;
+  color: #ffffff;
+  font-family: Lato;
+  font-size: 33px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.46px;
+  margin-bottom: 2.6rem;
+  margin-top: 2.6rem; }
+
+.info {
+  flex-direction: column; }
+
+.title {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom:2rem;
+  font-family: Lato;
+  font-size: 62px;
+  font-weight: 700;
+  letter-spacing: 0.89px;
+  color: #14596c; }
+
+.description {
+  color: #4a4e54;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 500;
+  text-align:center;
+  padding-bottom:30px;
+  }
+
+.swiper-container {
+  width: 1280px;
+  height: 400px; }
+
+.swiper-slide {
+  background-color: #53284f;
+  color: white;
+  padding: 1rem 2rem; }
+.swiper-testimonial{
+    padding-top: 60px;
+    text-align: center;
+}
+.swiper-author{
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.39px;
+    font-family: "Dawning of a New Day", cursive;
+    text-align: center;
+    padding-top: 70px;
+}
+
+
+.swiper-pagination {
+  position: relative;
+  text-align: center; }
+  .swiper-pagination span {
+    background-color: #53284f;
+    margin: 20px 10px;
+    height: 30px;
+    width: 30px; }
+
+  .swiper-button-next, .swiper-button-prev{
+    color:#14596c;
+  } 
+  .swiper-button-next{
+    background-image: url(/images/next.png);
+  }
+  .swiper-button-prev{
+    background-image: url(/images/prev.png);
+  }
+  
+
+
+
+.slider {
+  background: url("./images/slider.jpg") no-repeat center;
+  min-height: 480px;
+  width: 100%;
+  background-size: cover; }
+
+.text h2 {
+  color: #ffffff;
+  font-family: "Lato - Black Italic ";
+  font-size: 168px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 4rem;
+  margin-left: 5rem; }
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  width: 570px;
+  height: 375px;
+  margin: auto;
+  margin-top: 3rem; }
+
+.slide span {
+  color: #53284f;
+  font-family: "Lato - Black Italic";
+  font-size: 142px;
+  font-weight: 400;
+  text-align: center; }
+
+.slide p {
+  color: #53284f;
+  font-family: "Lexend Deca";
+  font-size: 29px;
+  font-weight: 400;
+  letter-spacing: 0.41px;
+  text-align: center; }
+
+.carousel-indicators li {
+  width: 18px;
+  height: 18px; }
+
+.carousel-indicators .active {
+  background-color: #52274e; }
+
+.blockquote-footer {
+  background-color: initial; }
+
+.services {
+  background: url("./images/slider.jpg") no-repeat center;
+  min-height: 480px;
+  width: 100%;
+  background-size: cover;
+  padding: 2rem 0 1rem;
+}
+.services .card {
+    background: transparent;
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.services .card-body {
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.services .card-inner {
+    background: #fff;
+    padding: 0 1rem 1rem 1rem;
+}
+  .services .cards .img {
+    background-size: cover;
+    min-height: 200px;
+    margin: 0 -1rem;
+  }
+  
+.card-inner h3{
+    font-family: lexend deca;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5rem;
+    font-size: 25px;
+}  
+
+.area {
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  margin-right: 70px; }
+  .area .img {
+    height: 190px;
+    text-align: center; }
+    .area .img h3 {
+      display: inline-block;
+      padding-top: 5rem;
+      color: #ffffff;
+      font-family: Lato;
+      font-size: 28px;
+      font-weight: 400; }
+
+.last_card {
+  margin-right: 0; }
+
+.img1 {
+  background: url("./images/service_1.jpg") no-repeat center; }
+
+.img2 {
+  background: url("./images/service_2.jpg") no-repeat center; }
+
+.img3 {
+  background: url("./images/service_3.jpg") no-repeat center; }
+
+.img4 {
+  background: url("./images/service_4.jpg") no-repeat center; }
+
+.card_info {
+  height: 284px;
+  padding: 0;
+  display: flex;
+  flex-direction: column; }
+  .card_info h4 {
+    text-align: center;
+    font-family: Lato;
+    font-size: 19px;
+    font-weight: 600;
+    color: #14596c;
+    padding-top: 3rem; }
+  .card_info p.ser_about {
+    text-align: center;
+    margin: 1rem; }
+
+.card_end {
+  padding: 0;
+  background-color: #53284f;
+  color: white; }
+  .card_end a {
+    color: white;
+    background-color: #53284f;
+    border-color: #53284f; }
+
+.card_btn {
+  border-radius: 0; }
+
+.cont_green_q .qgreen {
+  height: 130px;
+  background-color: #14596c;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .cont_green_q .qgreen h2.quote_green {
+    font-family: "Dawning of a New Day", cursive;
+    color: #ffffff;
+    font-size: 53px;
+    font-weight: 400;
+    text-align: center; }
+
+.bio-photo {
+  width: 423px;
+  height: 528px;
+  margin: 15rem 0 15rem 0;
+  position: relative; }
+  .bio-photo-background {
+    background-color: #8d944d;
+    height: calc(100% + 60px);
+    width: 100%;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    z-index: -1; }
+
+.bio h2#name {
+  color: #53284f;
+  font-family: Lato;
+  font-size: 49px;
+  font-weight: 700;
+  letter-spacing: 0.89px;
+  padding-top: 8rem;
+  text-align: center; }
+
+.bio h3#title {
+  color: #4a4f55;
+  font-family: Lato;
+  font-size: 33px;
+  font-weight: 500;
+  letter-spacing: 0.69px;
+  text-align: center; }
+
+.bio p#position {
+  padding: 3rem 0 3rem 0; }
+
+.bio .bio_btn {
+  background-color: #53284f;
+  border-color: #53284f;
+  border-radius: 0;
+  color: white !important;
+  width: 285px; }
+
+.bio .dark {
+  border-top: 4px solid #53284f; }
+
+.sponsor h2 {
+  color: #14596c;
+  font-family: Lato;
+  font-size: 49px;
+  font-weight: 700;
+  letter-spacing: 0.89px;
+  padding-top: 8rem;
+  text-align: center; }
+
+.counceling {
+  background: url("./images/hero_bg.jpg") no-repeat center;
+  min-height: 870px;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20rem; }
+  .counceling h1 {
+    color: #14596c;
+    font-family: "Lato - Black";
+    font-size: 126px;
+    font-weight: 600; }
+
+.serv_p {
+  margin-top: 3rem;
+  padding-top: 10px; }
+  .serv_p .serve {
+    margin-top: 0;
+    margin-bottom: 10px; }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+/* About page */
+.about-professionals{
+    height:712px;
+    padding-top:25px;
+}
+
+.about-professionals img {
+    width: 100%;
+}
+/*Contact page*/
+.dial{
+    height: 1268px;
+    opacity: 0.6;
+}
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+
+/* 
+Extra small devices (portrait phones, less than 576px) 
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  
+.text h2{
+ font-size:86px;
+}
+.slide span{
+    font-size:120px;
+}
+
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+.services{
+    
+}
+
+
+.area{
+    margin-right:0;
+   
+}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    
+}
+
+
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
+
+/* Set width to make card deck cards 100% width */
+@media (max-width: 767px) { 
+.cards{
+    display:flex;
+    flex-direction:column;
+}
+}
+
+
+
+

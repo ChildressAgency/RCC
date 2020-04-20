@@ -1,115 +1,107 @@
 <?php
-add_action('wp_footer', 'show_template');
-function show_template() {
-	global $template;
-	print_r($template);
-}
+/**
+ * Template Name: Contact Page
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage Twenty_Nineteen
+ * @since 1.0.0
+ */
 
-add_action('wp_enqueue_scripts', 'jquery_cdn');
-function jquery_cdn(){
-  if(!is_admin()){
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', false, null, true);
-    wp_enqueue_script('jquery');
-  }
-}
+get_header();
+?>
 
-add_action('wp_enqueue_scripts', 'cai_scripts');
-function cai_scripts(){
-  wp_register_script(
-    'bootstrap-popper',
-    'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
-    array('jquery'),
-    '',
-    true
-  );
+<!-- INTRO SECTION
+             ==================================================================================-->
+<section class="quote">
+  <div class="container">
+      <div class="row">
+         <div class="col-3"></div>
+         <div class="col-6"><hr class="top"></div>
+         <div class="col-3"></div>
+      </div>
+      <blockquote class="blockquote text-center">
+         <p class="mb-0 d-flex justify-content-center word"><?php the_field('top-quote'); ?></p>
+            <div class="row">
+               <div class="col"></div>
+               <div class="col-1"><hr class="bottom"></div>
+               <div class="col"></div>
+            </div>
+            <footer class="blockquote-footer d-flex justify-content-center"><cite title="Source Title"><?php the_field('quote_author'); ?></cite></footer>
+      </blockquote>
+   </div>   
+</section>
+<!--FORM SECTION
+             ==================================================================================-->
+<section>
+  <div class="container-fluid">
+    <div class="row">
+       <div class="col-3 dial" style="background-image: url(<?php the_field('contact_background_image'); ?>)"></div>
+            <div class="contact col-9 d-flex ">
+                <h3 class="title">Get In Touch <br>
+                With Teresa Robinson</h3>
+                <form>
+  <div class="form-group col-6">
+  <input type="text" class="form-control" placeholder="First name">
+  </div>
+  <div class="form-group col-6">
+  <input type="text" class="form-control" placeholder="Last name">
+  </div>
+  <div class="form-group col-6">    
+ <input type="phone" class="form-control" id="exampleInputPassword1" placeholder="Ex.123-564-8910">
+ </div>
+ <fieldset class="form-group">
+    <div class="row">
+      <legend class="">Have you been here before?</legend>
+      <div class="">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Comments</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+             </div>
+         <div class="col"></div>
+       </div>
+   </div>    
+</section>
+<!--QUOTE SECTION
+             ==================================================================================-->
+<section>
+   <div class="container-fluid cont_green_q">
+       <div class="row">
+          <div class="col-12 qgreen">
+             <h2 class="quote_green">
+                "Free yoursefl from stress of life with holistic therapy"
+             </h2>
+          </div>
+      </div>
+   </div>
+</section>
 
-  wp_register_script(
-    'bootstrap-scripts',
-    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
-    array('jquery', 'bootstrap-popper'),
-    '',
-    true
-  );
 
-  wp_register_script(
-    'cai-scripts',
-    get_stylesheet_directory_uri() . '/js/custom-scripts.min.js',
-    array('jquery', 'bootstrap-scripts'),
-    '',
-    true
-  );
+<?php
+get_footer();
 
-  wp_enqueue_script('bootstrap-popper');
-  wp_enqueue_script('bootstrap-scripts');
-  wp_enqueue_script('cai-scripts');
-}
 
-add_filter('script_loader_tag', 'cai_add_script_meta', 10, 2);
-function cai_add_script_meta($tag, $handle){
-  switch($handle){
-    case 'jquery':
-      $tag = str_replace('></script>', ' integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>', $tag);
-      break;
-
-    case 'bootstrap-popper':
-      $tag = str_replace('></script>', ' integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>', $tag);
-      break;
-
-    case 'bootstrap-scripts':
-      $tag = str_replace('></script>', ' integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>', $tag);
-      break;
-  }
-
-  return $tag;
-}
-
-add_action('wp_enqueue_scripts', 'cai_styles');
-function cai_styles(){
-  wp_register_style(
-    'google-fonts',
-    'https://fonts.googleapis.com/css?family=Maitree:400,700|Nunito+Sans:400,600,700|Nunito:700'
-  );
-
-  wp_register_style(
-    'fontawesome',
-    'https://use.fontawesome.com/releases/v5.6.3/css/all.css'
-  );
-
-  wp_register_style(
-    'cai-css',
-    get_stylesheet_directory_uri() . '/style.css'
-  );
-
-  wp_enqueue_style('google-fonts');
-  wp_enqueue_style('fontawesome');
-  wp_enqueue_style('cai-css');
-}
-
-add_filter('style_loader_tag', 'cai_add_css_meta', 10, 2);
-function cai_add_css_meta($link, $handle){
-  switch($handle){
-    case 'fontawesome':
-      $link = str_replace('/>', ' integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">', $link);
-      break;
-  }
-
-  return $link;
-}
-
-add_action('after_setup_theme', 'cai_setup');
-function cai_setup(){
-  add_theme_support('post-thumbnails');
-  //set_post_thumbnail_size(320, 320);
-
-  register_nav_menus(array(
-    'header-nav' => 'Header Navigation',
-    'footer-nav' => 'Footer Navigation',
-    'company-menu' => 'Company Footer Menu',
-    'services-menu' => 'Services Footer Menu'
-  ));
-
-  load_theme_textdomain('cai', get_stylesheet_directory_uri() . '/languages');
-}
-
-require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
