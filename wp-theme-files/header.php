@@ -23,13 +23,12 @@
 <body <?php body_class();?>>
   <div id="page" class="site">
     <header class="" role="banner">
-      <div class="site-top-header">
-            <a class="navbar-brand" href="#"><i class="far fa-clock"></i>  Bussiness Hours</a>
+      <div class="container-fluid site-top-header">
+            <a class="navbar-brand d-none d-md-block" href="#"><i class="far fa-clock"></i>  Bussiness Hours</a>
             <a class="navbar-brand" href="#"><i class="fas fa-phone-alt"></i>  Call:540.273.6685</a>
             <div class="right-side">
-              <a class="appointment" href="#"><i class="fas fa-calendar-check"></i></a>
-              <a class="appointment" href="https://dev.childressagency.com/rcc/contact/">Schedule appointment</a>
-              <ul class="social-icons">
+              <a class="appointment" href="https://dev.childressagency.com/rcc/contact/"><i class="fas fa-calendar-check"></i>Schedule appointment</a>
+              <ul class="social-icons d-none d-md-inline-block">
                 <li><a class="navbar-brand" href="#"><i class="fab fa-facebook-square"></i></a></li>
                 <li><a class="navbar-brand" href="#"><i class="fab fa-instagram"></i></a></li>
                 <li><a class="navbar-brand" href="#"><i class="fab fa-twitter-square"></i></a></li>
@@ -48,7 +47,7 @@
 
   <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'understrap');?>">
-      <span class="navbar-toggler-icon"></span>
+      <span class="fas fa-bars"></span>
     </button>
 
     <!-- The WordPress Menu goes here -->
@@ -69,23 +68,24 @@
 </nav><!-- .site-navigation -->
     <?php if( get_field('hero_background_image') ): ?>
         <div class="hero">
-            <div class="hero-bg-image" style="background-image: url(<?php the_field('hero_background_image'); ?>)"></div>
+          <div class="hero-bg-image" style="background-image: url(<?php the_field('hero_background_image'); ?>)"></div>
+          <div class="container">
             <?php if ( is_front_page() ): ?>
-				<img class="hero-logo" src="<?php bloginfo('template_url');?>/images/logo.svg"/>
+				      <img class="hero-logo" src="<?php bloginfo('template_url');?>/images/logo.png"/>
             <?php endif; ?>
             
             <?php if ( !is_front_page() ): ?>
-				<div class="hero-text"> 
-    				<?php if( get_field('hero_caption') ): ?>
-                        <h1><?php the_field('hero_caption'); ?></h1>
-                    <?php endif; ?>
-                    <?php if( get_field('hero_paragraph') ): ?>
-                        <h2><?php the_field('hero_paragraph'); ?></h2>
-                    <?php endif; ?>
-                </div>  
+				      <div class="hero-text"> 
+    				    <?php if( get_field('hero_caption') ): ?>
+                  <h1><?php the_field('hero_caption'); ?></h1>
+                <?php endif; ?>
+                <?php if( get_field('hero_paragraph') ): ?>
+                  <h2><?php the_field('hero_paragraph'); ?></h2>
+                <?php endif; ?>
+              </div>  
             <?php endif; ?>
             
-            
+          </div>
         </div>
     <?php endif; ?>
      

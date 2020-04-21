@@ -75,15 +75,10 @@ blockquote::before, blockquote::after {
 }
   .navbar .navbar-nav a {
     color: #ffffff;
-    font-family: Lato;
-    font-size: 36px;
-    font-weight: 400;
-    font-family: "Lato - Bold";
-    font-weight: 700;
-    font-family: "Lato - Regular";
-    font-weight: 400;
-    font-family: "Lato - Bold";
-    font-weight: 700;
+    font-family: Lato, sans-serif;
+    font-size: 26px;
+    text-shadow: 0px 0px 6px #333;
+    transition: all .2s ease;
   }
 
 .navbar .dropdown-menu {
@@ -91,21 +86,31 @@ blockquote::before, blockquote::after {
 }
 
 .navbar li a:hover {
-    color: #53284f;
+    color: #4d2d52;
     text-decoration: underline;
 }
 
+.navbar-toggler{
+  border-color: #fff;
+}
+.navbar-toggler .fas{
+  color: #fff;
+}
+
 footer {
-  background-color: #987e95; }
+  background-color: #987e95;
+  padding-top: 40px;
+  padding-bottom: 40px;
+ }
   footer h2 {
     color: #ffffff;
-    font-family: Lato;
-    font-size: 73px;
+    font-family: Lato, sans-serif;
+    font-size: 48px;
     font-weight: 700;
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: 0.73px;
-    margin: 40px 0 30px; }
+    margin-bottom: 30px; }
   footer h2,
   footer h3,
   footer a,
@@ -127,38 +132,75 @@ footer {
     backface-visibility: hidden;
     -webkit-perspective: 300px;
     perspective: 300px; }
+  footer .footer-contact-hours{
+    margin-top: 25px;
+  }
   footer .left-side h3,
   footer .left-side a {
     color: #ffffff;
     font-family: "Lexend Deca";
-    font-size: 33px;
+    font-size: 20px;
     font-weight: 400;
-    letter-spacing: 0.33px; }
+    letter-spacing: 0.33px;
+    display: inline-block;
+   }
+   footer .left-side i{
+     vertical-align: top;
+     margin-top: -10px;
+   }
   footer .right-side {
     text-align: right; }
     footer .right-side > div {
       justify-content: flex-end; }
     footer .right-side h3 {
       color: #ffffff;
-      font-family: Lato;
-      font-size: 26px;
+      font-family: Lato, sans-serif;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.26px; }
-    footer .right-side a i {
+    footer .footer-social-media a + a{
       margin-left: 15px;
-      margin-right: 0; }
+    }
     footer .right-side .follow-us h3 {
       color: #ffffff;
-      font-family: "Source Sans Pro", sans-serif;
-      font-size: 55px;
-      font-weight: 400;
+      font-family: "Lato", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.55px; }
+  footer .team-member{
+    margin-bottom: 25px;
+  }
   footer .footer-logo {
-    margin: 40px 0 30px; }
+    margin-bottom: 30px;
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+   }
   footer .footer-social-media {
     display: flex;
     justify-content: flex-end; }
+
+.copyright{
+  text-align: center;
+  margin-top: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+.copyright p{
+  margin-bottom: 0;
+}
+.copyright a{
+  color: #fff;
+}
+.copyright a:hover,
+.copyright a:focus{
+  color: #fff;
+  text-decoration: underline;
+}
 
 @keyframes vibrate {
   0%,
@@ -205,6 +247,9 @@ footer {
   .site-top-header .appointment {
     display: inline-block;
     margin-right: 40px; }
+    .site-top-header .appointment .fas{
+      margin-right: 6px;
+    }
   .site-top-header .social-icons li {
     display: inline-block; }
   .site-top-header a {
@@ -227,7 +272,7 @@ footer {
 .hero h2{
     text-align:center;
     color: #53284f;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 25px;
     font-weight: 700;
 }
@@ -244,15 +289,15 @@ footer {
 
 .hero-logo {
   margin: auto;
-  max-width: 820px;
-  width: 100%; 
+  max-width: 100%;
+  display: block;
 }
 
 .hero-text h1 {
     color: #14596c;
-    font-family: "Lato - Black";
+    font-family: "Lato";
     font-size: 126px;
-    font-weight: 600;
+    font-weight: 900;
 }
  
 
@@ -280,21 +325,26 @@ p.word{
 }
 
 hr.top, hr.bottom {
-  margin-top: 3rem;
-  margin-bottom: 1.6rem;
   border: 0;
-  border-top: 1px solid rbga();
-  border-top: 4px solid #987e95; }
+  border-top: 4px solid #987e95;
+  width: 90%;
+  max-width: 600px;
+  margin: 3rem auto 1.6rem;
+ }
+ hr.bottom{
+   max-width: 150px;
+ }
 
 .blockquote-footer::before {
   content: none; }
 
 cite {
   color: #ffffff;
-  font-family: "Lato - Light Italic";
-  font-size: 47px;
+  font-size: 40px;
   font-weight: 400;
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+ }
 
 .button {
   justify-content: center; }
@@ -303,30 +353,45 @@ cite {
   background-color: #987e95;
   border-radius: 0;
   color: #ffffff;
-  font-family: Lato;
-  font-size: 33px;
+  font-family: Lato, sans-serif;
+  font-size: 26px;
   font-weight: 400;
+  padding: 3px 25px;
   text-transform: uppercase;
   letter-spacing: 0.46px;
   margin-bottom: 2.6rem;
-  margin-top: 2.6rem; }
+  margin-top: 2.6rem;
+  transition: all .2s ease;
+ }
+
+  .service:hover,
+  .service:focus{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+  }
 
 .info {
-  flex-direction: column; }
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom:40px;
+ }
 
 .title {
   text-align: center;
   margin-top: 4rem;
   margin-bottom:2rem;
-  font-family: Lato;
-  font-size: 62px;
+  font-family: Lato, sans-serif;
+  font-size: 42px;
   font-weight: 700;
   letter-spacing: 0.89px;
   color: #14596c; }
 
 .description {
   color: #4a4e54;
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-align:center;
@@ -335,7 +400,7 @@ cite {
 
 .swiper-container {
   width: 1280px;
-  height: 400px; }
+ }
 
 .swiper-slide {
   background-color: #53284f;
@@ -368,10 +433,10 @@ cite {
     color:#14596c;
   } 
   .swiper-button-next{
-    background-image: url(/images/next.png);
+    /*background-image: url(/images/next.png);*/
   }
   .swiper-button-prev{
-    background-image: url(/images/prev.png);
+    /*background-image: url(/images/prev.png);*/
   }
   
 
@@ -379,41 +444,44 @@ cite {
 
 .slider {
   background: url("./images/slider.jpg") no-repeat center;
-  min-height: 480px;
   width: 100%;
-  background-size: cover; }
+  background-size: cover;
+  padding-top: 40px;
+  padding-bottom: 60px;
+ }
 
 .text h2 {
   color: #ffffff;
-  font-family: "Lato - Black Italic ";
-  font-size: 168px;
-  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  font-style: italic;
   text-transform: uppercase;
-  margin-top: 4rem;
-  margin-left: 5rem; }
+  line-height: 1.2em; }
 
 .slide {
   display: flex;
   flex-direction: column;
-  width: 570px;
-  height: 375px;
   margin: auto;
-  margin-top: 3rem; }
+  margin-top: 1rem; }
 
 .slide span {
   color: #53284f;
-  font-family: "Lato - Black Italic";
-  font-size: 142px;
-  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  font-size: 74px;
+  font-weight: 900;
+  font-style: italic;
   text-align: center; }
 
 .slide p {
   color: #53284f;
   font-family: "Lexend Deca";
-  font-size: 29px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.41px;
-  text-align: center; }
+  text-align: center;
+  line-height: 1.2em;
+ }
 
 .carousel-indicators li {
   width: 18px;
@@ -473,7 +541,7 @@ cite {
       display: inline-block;
       padding-top: 5rem;
       color: #ffffff;
-      font-family: Lato;
+      font-family: Lato, sans-serif;
       font-size: 28px;
       font-weight: 400; }
 
@@ -499,7 +567,7 @@ cite {
   flex-direction: column; }
   .card_info h4 {
     text-align: center;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 19px;
     font-weight: 600;
     color: #14596c;
@@ -521,11 +589,13 @@ cite {
   border-radius: 0; }
 
 .cont_green_q .qgreen {
-  height: 130px;
   background-color: #14596c;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding-top:20px;
+  padding-bottom:30px;
+ }
   .cont_green_q .qgreen h2.quote_green {
     font-family: "Dawning of a New Day", cursive;
     color: #ffffff;
@@ -533,11 +603,15 @@ cite {
     font-weight: 400;
     text-align: center; }
 
+.bio{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
 .bio-photo {
-  width: 423px;
-  height: 528px;
-  margin: 15rem 0 15rem 0;
-  position: relative; }
+  position: relative;
+  margin-bottom: 60px;
+ }
+
   .bio-photo-background {
     background-color: #8d944d;
     height: calc(100% + 60px);
@@ -549,16 +623,15 @@ cite {
 
 .bio h2#name {
   color: #53284f;
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 49px;
   font-weight: 700;
   letter-spacing: 0.89px;
-  padding-top: 8rem;
   text-align: center; }
 
 .bio h3#title {
   color: #4a4f55;
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 33px;
   font-weight: 500;
   letter-spacing: 0.69px;
@@ -579,7 +652,7 @@ cite {
 
 .sponsor h2 {
   color: #14596c;
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 49px;
   font-weight: 700;
   letter-spacing: 0.89px;
@@ -597,9 +670,9 @@ cite {
   padding-top: 20rem; }
   .counceling h1 {
     color: #14596c;
-    font-family: "Lato - Black";
+    font-family: "Lato", sans-serif;
     font-size: 126px;
-    font-weight: 600; }
+    font-weight:900; }
 
 .serv_p {
   margin-top: 3rem;
@@ -628,6 +701,20 @@ cite {
     opacity: 0.6;
 }
 
+.support{
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+.support-list{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.support-list .support-item{
+  max-width: 200px;
+  margin: 40px;
+}
+
 /*
 ####################################################
 M E D I A  Q U E R I E S
@@ -646,22 +733,13 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {  
-.text h2{
- font-size:86px;
-}
-.slide span{
-    font-size:120px;
-}
 
-}
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
 .services{
     
 }
-
 
 .area{
     margin-right:0;
@@ -692,6 +770,36 @@ Custom media queries
     display:flex;
     flex-direction:column;
 }
+  .site-top-header{
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .site-top-header .right-side{
+    margin-left: 0;
+  }
+  .site-top-header .appointment{
+    margin-right: 0;
+  }
+  .navbar-brand{
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px){
+  footer .left-side{
+    text-align: center;
+  }
+  footer .right-side{
+    margin-top: 40px;
+    text-align: center;
+  }
+  footer .footer-logo{
+    margin-right:auto;
+  }
+  footer .footer-social-media{
+    justify-content: center;
+  }
 }
 
 

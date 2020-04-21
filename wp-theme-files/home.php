@@ -10,21 +10,13 @@ get_header();?>
   ==================================================================================-->
 <section class="quote">
   <div class="container">    
-    <div class="row">
-         <div class="col-3"></div>
-         <div class="col-6 animated zoomIn delay-2s"><hr class="top"></div>
-         <div class="col-3"></div>
-    </div>
+    <hr class="top animated zoomIn delay-2s">
     <blockquote class="blockquote text-center">
-       <p class="mb-0 d-flex justify-content-center word animated fadeIn delay-2s"><?php the_field('quote_message');?></p>
-          <div class="row">
-              <div class="col"></div>
-              <div class="col-1"><hr class="bottom"></div>
-              <div class="col"></div>
-          </div>
-          <footer class="blockquote-footer d-flex justify-content-center animated fadeIn delay-3s">
-               <cite title="Source Title"><?php the_field('quote_author');?></cite>
-          </footer>
+      <p class="mb-0 d-flex justify-content-center word animated fadeIn delay-2s"><?php the_field('quote_message');?></p>
+      <hr class="bottom">
+      <footer class="blockquote-footer d-flex justify-content-center animated fadeIn delay-3s">
+        <cite title="Source Title"><?php the_field('quote_author');?></cite>
+      </footer>
     </blockquote>
       <div class="row button">
          <a class="service btn d-flex justify-content-center" href="#">Services</a>
@@ -34,16 +26,12 @@ get_header();?>
 <!--WHY SECTION
   ==================================================================================-->
 <section>
- <div class="container">
-   <div class="row">
-     <div class="col"></div>
-        <div class="info col-9 d-flex justify-content-center">
-           <h3 class="title animated fadeIn delay-2s"><?php the_field('title'); ?></h3>
-           <div class="description animated fadeIn delay-3s">
-               <p><?php the_field('description'); ?></p>
-            </div>
-         </div>
-       <div class="col"></div>
+  <div class="container">
+    <div class="info d-flex justify-content-center">
+      <h3 class="title animated fadeIn delay-2s"><?php the_field('title'); ?></h3>
+      <div class="description animated fadeIn delay-3s">
+        <p><?php the_field('description'); ?></p>
+      </div>
     </div>
   </div>  
 </section>
@@ -52,26 +40,26 @@ get_header();?>
 <section class="slider">
   <div class="container">
       <div class="row">
-          <div class="col-6 text ">
+          <div class="col-md-6 text ">
               <h2>Do you feel</h2>
           </div>
-          <div class="col-md-6 col-sm-12">
+          <div class="col-md-6">
             <?php if(have_rows('frontpage_carousel')): ?>
-              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <div id="do-you-feel-carousel" class="carousel slide carousel-fade carousel-heights" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <?php $counter = 0; while(have_rows('frontpage_carousel')): the_row(); ?>	
-                              <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $counter; ?>" <?php if($counter == 0){ echo ' class="active"'; } ?>></li>
+                              <li data-target="#do-you-feel-carousel" data-slide-to="<?php echo $counter; ?>" <?php if($counter == 0){ echo ' class="active"'; } ?>></li>
                         <?php $counter++; endwhile; ?>
                         </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner animated fadeIn delay-2s">
               <?php $i=0; while(have_rows('frontpage_carousel')): the_row(); ?>
                 <div class="carousel-item <?php if($i == 0){ echo 'active'; } ?>">
                   <div class="slide">
                       <?php if(get_sub_field('carousel_text')): ?>
-                          <p class="animated fadeIn delay-2s"> <?php the_sub_field('carousel_text'); ?></p>
+                          <p class=""> <?php the_sub_field('carousel_text'); ?></p>
                             <?php endif;?>   
                             <?php if(get_sub_field('carousel_title')): ?>
-                                    <span class="animated fadeIn delay-2s"><?php the_sub_field('carousel_title'); ?></span>
+                                    <span class=""><?php the_sub_field('carousel_title'); ?></span>
                             <?php endif;?>
                     </div><!--end of slide-->
                 </div><!--end of carousel item-->
@@ -88,7 +76,7 @@ get_header();?>
  <section class="services">
    <div class="container">
     <div class="row cards">
-      <div class="col-lg card">
+      <div class="col-md-6 col-lg-3 card">
         <div class="card-inner">          
             <div class="img img1">
               <h3><?php the_field('text_on_image_1stsp'); ?></h3>
@@ -102,7 +90,7 @@ get_header();?>
               </div>
         </div>
       </div>
-      <div class="col-lg card">
+      <div class="col-md-6 col-lg-3 card">
         <div class="card-inner">
             <div class="img img2">
                <h3><?php the_field('text_on_image_2ndsp'); ?></h3>
@@ -116,7 +104,7 @@ get_header();?>
               </div>
         </div>
       </div>
-     <div class="col-lg card">
+     <div class="col-md-6 col-lg-3 card">
        <div class="card-inner">
         <div class="img img3">
            <h3><?php the_field('text_on_image_3rdsp'); ?></h3>
@@ -130,7 +118,7 @@ get_header();?>
          </div>
        </div>
        </div>
-       <div class="col-lg card">
+       <div class="col-md-6 col-lg-3 card">
         <div class="card-inner">
              <div class="img img4">
                 <h3><?php the_field('text_on_image_4thsp'); ?></h3>
@@ -164,26 +152,23 @@ get_header();?>
  ==================================================================================-->
  <section class="bio">
     <div class="container">
-       <div class="row">
-        <div class="col-6">
-         <div class="animated fadeInLeft delay-2s bio-photo">
-            <img class="img-fluid" src="<?php bloginfo('template_url');?>/images/portrait.jpg"/>
-             <div class="bio-photo-background"></div>
+      <div class="row">
+        <div class="col-md-6 col-lg-5">
+          <div class="animated fadeInLeft delay-2s bio-photo">
+            <img class="img-fluid d-block mx-auto" src="<?php bloginfo('template_url');?>/images/portrait.jpg"/>
+            <div class="bio-photo-background"></div>
           </div>
         </div>
-         <div class="col-6">
-           <h2 id="name" class="animated fadeIn delay-3s"><?php the_field('name'); ?></h2>
-           <h3 id="title" class="animated fadeIn delay-3s"><?php the_field('job_position'); ?></h3>
-           <p id="position" class="animated fadeIn delay-3s"><?php the_field('biography'); ?></p>
-            <a class="btn btn-primary btn-lg btn-block bio_btn">Learn more</a>
-          </div>
-         </div>
-       <div class="row">
-         <div class="col-3"></div>
-         <div class="col-6"><hr class="top dark"></div>
-         <div class="col-3"></div>
+        <div class="col-md-6 col-lg-7">
+          <h2 id="name" class="animated fadeIn delay-3s"><?php the_field('name'); ?></h2>
+          <h3 id="title" class="animated fadeIn delay-3s"><?php the_field('job_position'); ?></h3>
+          <p id="position" class="animated fadeIn delay-3s"><?php the_field('biography'); ?></p>
+           <a class="btn btn-primary btn-lg btn-block bio_btn">Learn more</a>
         </div>
       </div>
+
+       <hr class="top dark">
+    </div>
   </section>
 <!--SLIDER SECTION
 ==================================================================================-->
@@ -228,40 +213,31 @@ get_header();?>
 ==================================================================================-->
 <?php if( have_rows('support') ): ?>
 
-              <section class="support">
-               
-                 <div class="container-fluid">
-                      <h3 class="title text-center">RCC supports the following of these organizations</h3>
-                   <div class="row">
-                 <div class="col"></div>
-              <?php while( have_rows('support') ): the_row(); 
+  <section class="support">
+    <div class="container-fluid">
+      <h3 class="title text-center">RCC supports the following of these organizations</h3>
+      <div class="support-list">
+        <?php while( have_rows('support') ): the_row(); 
+          // vars
+          $image = get_sub_field('image');                
+          $link = get_sub_field('link');
+        ?>
+          <div class="support-item">
+            <?php if( $link ): ?>
+              <a href="<?php echo $link; ?>">
+            <?php endif; ?>
 
-                // vars
-                $image = get_sub_field('image');                
-                $link = get_sub_field('link');
+              <img src="<?php echo $image['url']; ?>" class="img-fluid d-block" alt="<?php echo $image['alt'] ?>" />
 
-                ?>
+            <?php if( $link ): ?>
+              </a>
+            <?php endif; ?>
 
-                <div class="col-4">
-
-                  <?php if( $link ): ?>
-                    <a href="<?php echo $link; ?>">
-                  <?php endif; ?>
-
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
-
-                  <?php if( $link ): ?>
-                    </a>
-                  <?php endif; ?>
-
-                </div>
-
-              <?php endwhile; ?>
-              <div class="col"></div>
-                  </div>
-                </div>
-              </section>
-
-              <?php endif; ?>
+          </div>
+        <?php endwhile; ?>
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
 
 <?php get_footer();

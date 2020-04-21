@@ -47,7 +47,7 @@ function rcc_register_styles()
 
   wp_register_style(
     'google-fonts',
-    '//fonts.googleapis.com/css?family=Dawning+of+a+New+Day|Lato:300,300i,400,700,900|Lexend+Deca&display=swap'
+    '//fonts.googleapis.com/css?family=Dawning+of+a+New+Day|Lato:300,300i,400,700,900,900i|Lexend+Deca&display=swap'
   );
 
   wp_register_style(
@@ -74,7 +74,15 @@ function rcc_register_styles()
 
 add_action('wp_enqueue_scripts', 'rcc_register_styles');
 
-add_action('wp_enqueue_script', 'rcc_scripts');
+add_action('wp_enqueue_scripts', 'jquery_cdn');
+function jquery_cdn(){
+  if(!is_admin()){
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', false, null, true);
+    wp_enqueue_script('jquery');
+  }
+}
+add_action('wp_enqueue_scripts', 'rcc_scripts');
 function rcc_scripts(){
   wp_register_script(
     'bootstrap-popper',
